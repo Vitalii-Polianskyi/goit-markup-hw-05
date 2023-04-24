@@ -10,6 +10,7 @@
   --back-color-btn-order: #404bbf;
   --subtle-text: #8e8f99;
   --green-color-socail: #31d0aa;
+  --back-color-modal-order: #fcfcfc;
 }
 h1,
 h2,
@@ -78,6 +79,26 @@ body {
   display: flex;
   align-items: center;
 }
+.header-nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 4px;
+  display: block;
+  /* background-color: var(--back-color-btn-order); */
+  border-radius: 2px;
+}
+.header-nav-link.current {
+  color: var(--back-color-btn-order);
+}
+.header-nav-link.current::after,
+.header-nav-link:hover::after,
+.header-nav-link:focus::after {
+  background-color: var(--back-color-btn-order);
+}
 .nav-menu {
   display: flex;
   align-items: center;
@@ -88,6 +109,7 @@ body {
 }
 .header-nav-link {
   display: block;
+  position: relative;
   padding-top: 24px;
   padding-bottom: 24px;
 }
@@ -348,14 +370,15 @@ a.nav-link {
   align-items: center;
 }
 .social-items {
+  width: 40px;
+  height: 40px;
 }
 .social-link {
   background-color: #4d5ae5;
   display: flex;
   width: 100%;
   height: 100%;
-  width: 40px;
-  height: 40px;
+
   gap: 12;
   color: var(--subtle-text);
   justify-content: center;
@@ -438,8 +461,11 @@ a.nav-link {
 }
 .footer-container {
   display: flex;
-  gap: 120px;
+  /* gap: 120px; */
   align-items: baseline;
+}
+.footer-items-left {
+  margin-right: 120px;
 }
 .social-media {
   font-family: "Roboto";
@@ -519,4 +545,49 @@ a.nav-link {
 }
 .headers-content {
   margin-bottom: 8px;
+}
+/**
+  |============================
+  | modal order service
+  |============================
+*/
+.backdrop {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(46, 47, 66, 0.4);
+}
+.modal {
+  position: absolute;
+  z-index: 10;
+
+  top: 80px;
+  left: 40%;
+  padding: 24px;
+  width: 408px;
+  min-height: 584px;
+  cursor: pointer;
+
+  background: #fcfcfc;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+}
+.modal-btn {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+
+  background: #e7e9fc;
+
+  border-radius: 50%;
+
+  display: block;
+  margin-left: auto;
+
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.modal-icon {
 }
