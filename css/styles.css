@@ -85,6 +85,10 @@ body {
   position: relative;
   padding-top: 24px;
   padding-bottom: 24px;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-nav-link::after {
@@ -98,7 +102,7 @@ body {
   display: block;
   border-radius: 2px;
 
-  transition-property: color, background-color;
+  transition-property: color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -189,7 +193,7 @@ address {
 }
 a.nav-link {
   color: var(--body-text);
-  transition-property: background-color;
+  transition-property: color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -409,7 +413,7 @@ a.nav-link {
   align-items: center;
   border-radius: 50%;
 
-  transition-property: color, background-color;
+  transition-property: background-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
